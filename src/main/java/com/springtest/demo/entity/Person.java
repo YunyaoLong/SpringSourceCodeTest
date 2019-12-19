@@ -1,4 +1,4 @@
-package com.springtest.demo;
+package com.springtest.demo.entity;
 
 import lombok.AccessLevel;
 import lombok.Getter;
