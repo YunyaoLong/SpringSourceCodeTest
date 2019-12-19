@@ -1,13 +1,14 @@
 package com.springtest.demo;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
+@Getter(AccessLevel.PUBLIC)
+@Setter(AccessLevel.PUBLIC)
 @ToString
 public class Person {
-    Integer age;
-    String name;
+    private Integer age;
+    private String name;
 }
