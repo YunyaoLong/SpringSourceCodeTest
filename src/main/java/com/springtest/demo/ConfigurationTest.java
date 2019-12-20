@@ -18,6 +18,8 @@ public class ConfigurationTest {
         System.out.println("使用xml直接注入的方式进行组件注册：");
         System.out.println(context.getBean("person"));
         System.out.println("-----------------------------------------------------");
+        System.out.println("查看所有被扫描注册的组件：");
+        Arrays.asList(context.getBeanDefinitionNames()).stream().forEach(name -> System.out.println("---->"+name));
     }
 
     /**
