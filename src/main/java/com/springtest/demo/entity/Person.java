@@ -11,4 +11,7 @@ import lombok.ToString;
 public class Person {
     private Integer age;
     private String name;
+    public  Person() {
+        System.out.println("========一个Person对象被创建==========");
+    }
 }

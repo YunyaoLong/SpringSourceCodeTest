@@ -3,11 +3,9 @@ package com.springtest.demo.config;
 import com.springtest.demo.config.typefilter.PersonTypeFilter;
 import com.springtest.demo.entity.Person;
 import com.springtest.demo.service.PersonService;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.ComponentScan.Filter;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +29,10 @@ import org.springframework.stereotype.Service;
 // Component是一个可重复定义组件: @Repeatable
 //@ComponentScan
 public class BeansConfig {
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+    // Scope一共有4种模式：Single单例模式，Prototype多例模式，request每个请求创建一个实例，session每个session创建一个实例
     @Bean(name = "person3")
+    @Lazy(value = true)
     public Person person01() {
         Person person = new Person();
         person.setAge(20);
